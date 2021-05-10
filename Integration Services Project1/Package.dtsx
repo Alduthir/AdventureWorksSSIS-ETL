@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="34"
-  DTS:VersionGUID="{24511312-263A-41CD-852C-9535CAD5BFE0}">
+  DTS:VersionBuild="42"
+  DTS:VersionGUID="{3D7826AB-4087-453F-ACE7-35D80CCB0D52}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -145,7 +145,9 @@
                       lineageId="Package\Fill Date Dimension\OLE DB Source.Outputs[OLE DB Source Output].Columns[Day]" />
                     <inputColumn
                       refId="Package\Fill Date Dimension\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Month]"
-                      cachedDataType="i4"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
                       cachedName="Month"
                       externalMetadataColumnId="Package\Fill Date Dimension\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Month]"
                       lineageId="Package\Fill Date Dimension\OLE DB Source.Outputs[OLE DB Source Output].Columns[Month]" />
@@ -163,7 +165,9 @@
                       lineageId="Package\Fill Date Dimension\OLE DB Source.Outputs[OLE DB Source Output].Columns[Week]" />
                     <inputColumn
                       refId="Package\Fill Date Dimension\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Season]"
-                      cachedDataType="i4"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
                       cachedName="Season"
                       externalMetadataColumnId="Package\Fill Date Dimension\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Season]"
                       lineageId="Package\Fill Date Dimension\OLE DB Source.Outputs[OLE DB Source Output].Columns[Season]" />
@@ -188,9 +192,7 @@
                       name="DateKey" />
                     <externalMetadataColumn
                       refId="Package\Fill Date Dimension\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Date]"
-                      codePage="1252"
-                      dataType="str"
-                      length="10"
+                      dataType="dbTimeStamp"
                       name="Date" />
                     <externalMetadataColumn
                       refId="Package\Fill Date Dimension\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NumberOfDayInWeek]"
@@ -200,7 +202,7 @@
                       refId="Package\Fill Date Dimension\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Day]"
                       codePage="1252"
                       dataType="str"
-                      length="20"
+                      length="50"
                       name="Day" />
                     <externalMetadataColumn
                       refId="Package\Fill Date Dimension\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Week]"
@@ -337,10 +339,12 @@
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Fill Date Dimension\OLE DB Source.Outputs[OLE DB Source Output].Columns[Month]"
-                      dataType="i4"
+                      codePage="1252"
+                      dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Fill Date Dimension\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Month]"
+                      length="50"
                       lineageId="Package\Fill Date Dimension\OLE DB Source.Outputs[OLE DB Source Output].Columns[Month]"
                       name="Month"
                       truncationRowDisposition="FailComponent" />
@@ -364,10 +368,12 @@
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Fill Date Dimension\OLE DB Source.Outputs[OLE DB Source Output].Columns[Season]"
-                      dataType="i4"
+                      codePage="1252"
+                      dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Fill Date Dimension\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Season]"
+                      length="50"
                       lineageId="Package\Fill Date Dimension\OLE DB Source.Outputs[OLE DB Source Output].Columns[Season]"
                       name="Season"
                       truncationRowDisposition="FailComponent" />
@@ -404,7 +410,9 @@
                       name="Day" />
                     <externalMetadataColumn
                       refId="Package\Fill Date Dimension\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Month]"
-                      dataType="i4"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
                       name="Month" />
                     <externalMetadataColumn
                       refId="Package\Fill Date Dimension\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Year]"
@@ -416,7 +424,9 @@
                       name="Week" />
                     <externalMetadataColumn
                       refId="Package\Fill Date Dimension\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Season]"
-                      dataType="i4"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
                       name="Season" />
                     <externalMetadataColumn
                       refId="Package\Fill Date Dimension\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[NumberDayOfWeek]"
@@ -447,7 +457,9 @@
                       name="Day" />
                     <outputColumn
                       refId="Package\Fill Date Dimension\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Month]"
-                      dataType="i4"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
                       lineageId="Package\Fill Date Dimension\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Month]"
                       name="Month" />
                     <outputColumn
@@ -462,7 +474,9 @@
                       name="Week" />
                     <outputColumn
                       refId="Package\Fill Date Dimension\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Season]"
-                      dataType="i4"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
                       lineageId="Package\Fill Date Dimension\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Season]"
                       name="Season" />
                     <outputColumn
@@ -938,17 +952,23 @@
                       externalMetadataColumnId="Package\Fill Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LocationKey]"
                       lineageId="Package\Fill Fact Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[LocationKey]" />
                     <inputColumn
-                      refId="Package\Fill Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Price]"
-                      cachedDataType="i4"
-                      cachedName="Price"
-                      externalMetadataColumnId="Package\Fill Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Price]"
-                      lineageId="Package\Fill Fact Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[Price]" />
-                    <inputColumn
                       refId="Package\Fill Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Amount]"
                       cachedDataType="i4"
                       cachedName="Amount"
                       externalMetadataColumnId="Package\Fill Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Amount]"
                       lineageId="Package\Fill Fact Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[Amount]" />
+                    <inputColumn
+                      refId="Package\Fill Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LineTotal]"
+                      cachedDataType="cy"
+                      cachedName="LineTotal"
+                      externalMetadataColumnId="Package\Fill Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LineTotal]"
+                      lineageId="Package\Fill Fact Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[LineTotal]" />
+                    <inputColumn
+                      refId="Package\Fill Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ProductKey]"
+                      cachedDataType="i4"
+                      cachedName="ProductKey"
+                      externalMetadataColumnId="Package\Fill Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductKey]"
+                      lineageId="Package\Fill Fact Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductKey]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -973,13 +993,17 @@
                       dataType="i8"
                       name="LocationKey" />
                     <externalMetadataColumn
-                      refId="Package\Fill Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Price]"
-                      dataType="cy"
-                      name="Price" />
-                    <externalMetadataColumn
                       refId="Package\Fill Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Amount]"
                       dataType="i4"
                       name="Amount" />
+                    <externalMetadataColumn
+                      refId="Package\Fill Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LineTotal]"
+                      dataType="cy"
+                      name="LineTotal" />
+                    <externalMetadataColumn
+                      refId="Package\Fill Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductKey]"
+                      dataType="i8"
+                      name="ProductKey" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -1033,11 +1057,12 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT ss.Price, ss.Amount, dd.DateKey, de.EmployeeKey, dl.LocationKey, dr.ResellerKey FROM StagingSales ss
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT ss.LineTotal, ss.Amount, dd.DateKey, de.EmployeeKey, dl.LocationKey, dr.ResellerKey, dp.ProductKey FROM StagingSales ss
 JOIN DimDate dd ON dd.Date = ss.Date
 JOIN DimEmployee de ON de.Name = ss.EmployeeName AND de.Role = ss.Role
 JOIN DimLocation dl ON dl.Area = ss.Area AND dl.Country = ss.CountryCode
-JOIN DimReseller dr ON dr.Name = ss.StoreName;</property>
+JOIN DimReseller dr ON dr.Name = ss.StoreName
+JOIN DimProduct dp ON dp.ProductName = ss.ProductName;</property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -1073,15 +1098,6 @@ JOIN DimReseller dr ON dr.Name = ss.StoreName;</property>
                   refId="Package\Fill Fact Table\OLE DB Source.Outputs[OLE DB Source Output]"
                   name="OLE DB Source Output">
                   <outputColumns>
-                    <outputColumn
-                      refId="Package\Fill Fact Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[Price]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Fill Fact Table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Price]"
-                      lineageId="Package\Fill Fact Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[Price]"
-                      name="Price"
-                      truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Fill Fact Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[Amount]"
                       dataType="i4"
@@ -1127,13 +1143,27 @@ JOIN DimReseller dr ON dr.Name = ss.StoreName;</property>
                       lineageId="Package\Fill Fact Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[ResellerKey]"
                       name="ResellerKey"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Fill Fact Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[LineTotal]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Fill Fact Table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LineTotal]"
+                      lineageId="Package\Fill Fact Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[LineTotal]"
+                      name="LineTotal"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Fill Fact Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Fill Fact Table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ProductKey]"
+                      lineageId="Package\Fill Fact Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductKey]"
+                      name="ProductKey"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Fill Fact Table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Price]"
-                      dataType="i4"
-                      name="Price" />
                     <externalMetadataColumn
                       refId="Package\Fill Fact Table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Amount]"
                       dataType="i4"
@@ -1154,6 +1184,14 @@ JOIN DimReseller dr ON dr.Name = ss.StoreName;</property>
                       refId="Package\Fill Fact Table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ResellerKey]"
                       dataType="i8"
                       name="ResellerKey" />
+                    <externalMetadataColumn
+                      refId="Package\Fill Fact Table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LineTotal]"
+                      dataType="cy"
+                      name="LineTotal" />
+                    <externalMetadataColumn
+                      refId="Package\Fill Fact Table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ProductKey]"
+                      dataType="i4"
+                      name="ProductKey" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -1162,10 +1200,10 @@ JOIN DimReseller dr ON dr.Name = ss.StoreName;</property>
                   name="OLE DB Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Fill Fact Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Price]"
-                      dataType="i4"
-                      lineageId="Package\Fill Fact Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Price]"
-                      name="Price" />
+                      refId="Package\Fill Fact Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LineTotal]"
+                      dataType="cy"
+                      lineageId="Package\Fill Fact Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LineTotal]"
+                      name="LineTotal" />
                     <outputColumn
                       refId="Package\Fill Fact Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Amount]"
                       dataType="i4"
@@ -1191,6 +1229,11 @@ JOIN DimReseller dr ON dr.Name = ss.StoreName;</property>
                       dataType="i8"
                       lineageId="Package\Fill Fact Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ResellerKey]"
                       name="ResellerKey" />
+                    <outputColumn
+                      refId="Package\Fill Fact Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ProductKey]"
+                      dataType="i4"
+                      lineageId="Package\Fill Fact Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ProductKey]"
+                      name="ProductKey" />
                     <outputColumn
                       refId="Package\Fill Fact Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
@@ -1549,6 +1592,292 @@ JOIN DimReseller dr ON dr.Name = ss.StoreName;</property>
               endId="Package\Fill Location Dimension\OLE DB Destination.Inputs[OLE DB Destination Input]"
               name="OLE DB Source Output"
               startId="Package\Fill Location Dimension\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Fill Product Dimension"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{B68DD73D-940D-42DE-8CB5-22EC9B346C18}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Fill Product Dimension"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Fill Product Dimension\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DimProduct]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Fill Product Dimension\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.Warehouse]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.Warehouse]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Fill Product Dimension\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Fill Product Dimension\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ProductName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ProductName"
+                      externalMetadataColumnId="Package\Fill Product Dimension\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductName]"
+                      lineageId="Package\Fill Product Dimension\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductName]" />
+                    <inputColumn
+                      refId="Package\Fill Product Dimension\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[UnitPrice]"
+                      cachedDataType="i4"
+                      cachedName="UnitPrice"
+                      externalMetadataColumnId="Package\Fill Product Dimension\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UnitPrice]"
+                      lineageId="Package\Fill Product Dimension\OLE DB Source.Outputs[OLE DB Source Output].Columns[UnitPrice]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Fill Product Dimension\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductKey]"
+                      dataType="i4"
+                      name="ProductKey" />
+                    <externalMetadataColumn
+                      refId="Package\Fill Product Dimension\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="ProductName" />
+                    <externalMetadataColumn
+                      refId="Package\Fill Product Dimension\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UnitPrice]"
+                      dataType="cy"
+                      name="UnitPrice" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Fill Product Dimension\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Fill Product Dimension\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Fill Product Dimension\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Fill Product Dimension\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Fill Product Dimension\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Fill Product Dimension\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Fill Product Dimension\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[StagingSales]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT DISTINCT ProductName, UnitPrice FROM StagingSales;</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Fill Product Dimension\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.Warehouse]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.Warehouse]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Fill Product Dimension\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Fill Product Dimension\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Fill Product Dimension\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ProductName]"
+                      length="50"
+                      lineageId="Package\Fill Product Dimension\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductName]"
+                      name="ProductName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Fill Product Dimension\OLE DB Source.Outputs[OLE DB Source Output].Columns[UnitPrice]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Fill Product Dimension\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[UnitPrice]"
+                      lineageId="Package\Fill Product Dimension\OLE DB Source.Outputs[OLE DB Source Output].Columns[UnitPrice]"
+                      name="UnitPrice"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Fill Product Dimension\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ProductName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ProductName" />
+                    <externalMetadataColumn
+                      refId="Package\Fill Product Dimension\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[UnitPrice]"
+                      dataType="i4"
+                      name="UnitPrice" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Fill Product Dimension\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Fill Product Dimension\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ProductName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Fill Product Dimension\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ProductName]"
+                      name="ProductName" />
+                    <outputColumn
+                      refId="Package\Fill Product Dimension\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[UnitPrice]"
+                      dataType="i4"
+                      lineageId="Package\Fill Product Dimension\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[UnitPrice]"
+                      name="UnitPrice" />
+                    <outputColumn
+                      refId="Package\Fill Product Dimension\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Fill Product Dimension\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Fill Product Dimension\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Fill Product Dimension\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Fill Product Dimension.Paths[OLE DB Source Output]"
+              endId="Package\Fill Product Dimension\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Fill Product Dimension\OLE DB Source.Outputs[OLE DB Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -2204,6 +2533,12 @@ JOIN DimReseller dr ON dr.Name = ss.StoreName;</property>
                       cachedLength="50"
                       cachedName="JobTitle"
                       lineageId="Package\Fill Staging Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[JobTitle]" />
+                    <inputColumn
+                      refId="Package\Fill Staging Table\Derived Column.Inputs[Derived Column Input].Columns[ProductName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="ProductName"
+                      lineageId="Package\Fill Staging Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductName]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -2324,28 +2659,6 @@ JOIN DimReseller dr ON dr.Name = ss.StoreName;</property>
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
                           name="FriendlyExpression">DATEPART("dw",OrderDate)</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Fill Staging Table\Derived Column.Outputs[Derived Column Output].Columns[Season]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Computation"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\Fill Staging Table\Derived Column.Outputs[Derived Column Output].Columns[Season]"
-                      name="Season"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Expression"
-                          name="Expression">[DATEPART]("qq",#{Package\Fill Staging Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[OrderDate]})</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Friendly Expression"
-                          expressionType="Notify"
-                          name="FriendlyExpression">DATEPART("qq",OrderDate)</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
@@ -2564,6 +2877,30 @@ JOIN DimReseller dr ON dr.Name = ss.StoreName;</property>
                           name="FriendlyExpression">LastName</property>
                       </properties>
                     </outputColumn>
+                    <outputColumn
+                      refId="Package\Fill Staging Table\Derived Column.Outputs[Derived Column Output].Columns[C_ProductName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Fill Staging Table\Derived Column.Outputs[Derived Column Output].Columns[C_ProductName]"
+                      name="C_ProductName"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\Fill Staging Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductName]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">ProductName</property>
+                      </properties>
+                    </outputColumn>
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
@@ -2610,6 +2947,11 @@ JOIN DimReseller dr ON dr.Name = ss.StoreName;</property>
                       cachedDataType="i4"
                       cachedName="NumberDayOfWeek"
                       lineageId="Package\Fill Staging Table\Derived Column.Outputs[Derived Column Output].Columns[NumberDayOfWeek]" />
+                    <inputColumn
+                      refId="Package\Fill Staging Table\Derived Column 1.Inputs[Derived Column Input].Columns[Month]"
+                      cachedDataType="i4"
+                      cachedName="Month"
+                      lineageId="Package\Fill Staging Table\Derived Column.Outputs[Derived Column Output].Columns[Month]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -2644,6 +2986,54 @@ JOIN DimReseller dr ON dr.Name = ss.StoreName;</property>
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
                           name="FriendlyExpression">NumberDayOfWeek == 7 ? "Sunday" : NumberDayOfWeek == 1 ? "Monday" : NumberDayOfWeek == 2 ? "Tuesday" : NumberDayOfWeek == 3 ? "Wednesday" : NumberDayOfWeek == 4 ? "Thursday" : NumberDayOfWeek == 5 ? "Friday" : "Saturday"</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fill Staging Table\Derived Column 1.Outputs[Derived Column Output].Columns[C_Month]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Fill Staging Table\Derived Column 1.Outputs[Derived Column Output].Columns[C_Month]"
+                      name="C_Month"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\Fill Staging Table\Derived Column.Outputs[Derived Column Output].Columns[Month]} == 1 ? "January" : #{Package\Fill Staging Table\Derived Column.Outputs[Derived Column Output].Columns[Month]} == 2 ? "February" : #{Package\Fill Staging Table\Derived Column.Outputs[Derived Column Output].Columns[Month]} == 3 ? "March" : #{Package\Fill Staging Table\Derived Column.Outputs[Derived Column Output].Columns[Month]} == 4 ? "April" : #{Package\Fill Staging Table\Derived Column.Outputs[Derived Column Output].Columns[Month]} == 5 ? "May" : #{Package\Fill Staging Table\Derived Column.Outputs[Derived Column Output].Columns[Month]} == 6 ? "June" : #{Package\Fill Staging Table\Derived Column.Outputs[Derived Column Output].Columns[Month]} == 7 ? "July" : #{Package\Fill Staging Table\Derived Column.Outputs[Derived Column Output].Columns[Month]} == 8 ? "August" : #{Package\Fill Staging Table\Derived Column.Outputs[Derived Column Output].Columns[Month]} == 9 ? "September" : #{Package\Fill Staging Table\Derived Column.Outputs[Derived Column Output].Columns[Month]} == 10 ? "October" : #{Package\Fill Staging Table\Derived Column.Outputs[Derived Column Output].Columns[Month]} == 11 ? "November" : "December"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">Month == 1 ? "January" : Month == 2 ? "February" : Month == 3 ? "March" : Month == 4 ? "April" : Month == 5 ? "May" : Month == 6 ? "June" : Month == 7 ? "July" : Month == 8 ? "August" : Month == 9 ? "September" : Month == 10 ? "October" : Month == 11 ? "November" : "December"</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fill Staging Table\Derived Column 1.Outputs[Derived Column Output].Columns[Season]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Fill Staging Table\Derived Column 1.Outputs[Derived Column Output].Columns[Season]"
+                      name="Season"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\Fill Staging Table\Derived Column.Outputs[Derived Column Output].Columns[Month]} == 1 ? "Winter" : #{Package\Fill Staging Table\Derived Column.Outputs[Derived Column Output].Columns[Month]} == 2 ? "Winter" : #{Package\Fill Staging Table\Derived Column.Outputs[Derived Column Output].Columns[Month]} == 3 ? "Spring" : #{Package\Fill Staging Table\Derived Column.Outputs[Derived Column Output].Columns[Month]} == 4 ? "Spring" : #{Package\Fill Staging Table\Derived Column.Outputs[Derived Column Output].Columns[Month]} == 5 ? "Spring" : #{Package\Fill Staging Table\Derived Column.Outputs[Derived Column Output].Columns[Month]} == 6 ? "Summer" : #{Package\Fill Staging Table\Derived Column.Outputs[Derived Column Output].Columns[Month]} == 7 ? "Summer" : #{Package\Fill Staging Table\Derived Column.Outputs[Derived Column Output].Columns[Month]} == 8 ? "Summer" : #{Package\Fill Staging Table\Derived Column.Outputs[Derived Column Output].Columns[Month]} == 9 ? "Fall" : #{Package\Fill Staging Table\Derived Column.Outputs[Derived Column Output].Columns[Month]} == 10 ? "Fall" : #{Package\Fill Staging Table\Derived Column.Outputs[Derived Column Output].Columns[Month]} == 11 ? "Fall" : "Winter"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">Month == 1 ? "Winter" : Month == 2 ? "Winter" : Month == 3 ? "Spring" : Month == 4 ? "Spring" : Month == 5 ? "Spring" : Month == 6 ? "Summer" : Month == 7 ? "Summer" : Month == 8 ? "Summer" : Month == 9 ? "Fall" : Month == 10 ? "Fall" : Month == 11 ? "Fall" : "Winter"</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -2747,12 +3137,6 @@ JOIN DimReseller dr ON dr.Name = ss.StoreName;</property>
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Fill Staging Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Month]"
-                      cachedDataType="i4"
-                      cachedName="Month"
-                      externalMetadataColumnId="Package\Fill Staging Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Month]"
-                      lineageId="Package\Fill Staging Table\Derived Column.Outputs[Derived Column Output].Columns[Month]" />
-                    <inputColumn
                       refId="Package\Fill Staging Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Year]"
                       cachedDataType="i4"
                       cachedName="Year"
@@ -2778,7 +3162,8 @@ JOIN DimReseller dr ON dr.Name = ss.StoreName;</property>
                       lineageId="Package\Fill Staging Table\Derived Column.Outputs[Derived Column Output].Columns[NumberDayOfWeek]" />
                     <inputColumn
                       refId="Package\Fill Staging Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Day]"
-                      cachedDataType="wstr"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
                       cachedLength="9"
                       cachedName="Day"
                       externalMetadataColumnId="Package\Fill Staging Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Day]"
@@ -2852,12 +3237,6 @@ JOIN DimReseller dr ON dr.Name = ss.StoreName;</property>
                       externalMetadataColumnId="Package\Fill Staging Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Role]"
                       lineageId="Package\Fill Staging Table\Derived Column.Outputs[Derived Column Output].Columns[C_JobTitle]" />
                     <inputColumn
-                      refId="Package\Fill Staging Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Season]"
-                      cachedDataType="i4"
-                      cachedName="Season"
-                      externalMetadataColumnId="Package\Fill Staging Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Season]"
-                      lineageId="Package\Fill Staging Table\Derived Column.Outputs[Derived Column Output].Columns[Season]" />
-                    <inputColumn
                       refId="Package\Fill Staging Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FullName]"
                       cachedCodepage="1252"
                       cachedDataType="str"
@@ -2866,17 +3245,49 @@ JOIN DimReseller dr ON dr.Name = ss.StoreName;</property>
                       externalMetadataColumnId="Package\Fill Staging Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EmployeeName]"
                       lineageId="Package\Fill Staging Table\Derived Column.Outputs[Derived Column Output].Columns[FullName]" />
                     <inputColumn
-                      refId="Package\Fill Staging Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[UnitPrice]"
-                      cachedDataType="cy"
-                      cachedName="UnitPrice"
-                      externalMetadataColumnId="Package\Fill Staging Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Price]"
-                      lineageId="Package\Fill Staging Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[UnitPrice]" />
-                    <inputColumn
                       refId="Package\Fill Staging Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Quantity]"
                       cachedDataType="i2"
                       cachedName="Quantity"
                       externalMetadataColumnId="Package\Fill Staging Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Amount]"
                       lineageId="Package\Fill Staging Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[Quantity]" />
+                    <inputColumn
+                      refId="Package\Fill Staging Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[UnitPrice]"
+                      cachedDataType="cy"
+                      cachedName="UnitPrice"
+                      externalMetadataColumnId="Package\Fill Staging Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UnitPrice]"
+                      lineageId="Package\Fill Staging Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[UnitPrice]" />
+                    <inputColumn
+                      refId="Package\Fill Staging Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LineTotal]"
+                      cachedDataType="numeric"
+                      cachedName="LineTotal"
+                      cachedPrecision="38"
+                      cachedScale="6"
+                      externalMetadataColumnId="Package\Fill Staging Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LineTotal]"
+                      lineageId="Package\Fill Staging Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[LineTotal]" />
+                    <inputColumn
+                      refId="Package\Fill Staging Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[C_ProductName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="C_ProductName"
+                      externalMetadataColumnId="Package\Fill Staging Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductName]"
+                      lineageId="Package\Fill Staging Table\Derived Column.Outputs[Derived Column Output].Columns[C_ProductName]" />
+                    <inputColumn
+                      refId="Package\Fill Staging Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[C_Month]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="C_Month"
+                      externalMetadataColumnId="Package\Fill Staging Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Month]"
+                      lineageId="Package\Fill Staging Table\Derived Column 1.Outputs[Derived Column Output].Columns[C_Month]" />
+                    <inputColumn
+                      refId="Package\Fill Staging Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Season]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Season"
+                      externalMetadataColumnId="Package\Fill Staging Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Season]"
+                      lineageId="Package\Fill Staging Table\Derived Column 1.Outputs[Derived Column Output].Columns[Season]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -2889,10 +3300,6 @@ JOIN DimReseller dr ON dr.Name = ss.StoreName;</property>
                       dataType="dbTimeStamp"
                       name="Date" />
                     <externalMetadataColumn
-                      refId="Package\Fill Staging Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DateKey]"
-                      dataType="i4"
-                      name="DateKey" />
-                    <externalMetadataColumn
                       refId="Package\Fill Staging Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Day]"
                       codePage="1252"
                       dataType="str"
@@ -2900,7 +3307,9 @@ JOIN DimReseller dr ON dr.Name = ss.StoreName;</property>
                       name="Day" />
                     <externalMetadataColumn
                       refId="Package\Fill Staging Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Month]"
-                      dataType="i4"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
                       name="Month" />
                     <externalMetadataColumn
                       refId="Package\Fill Staging Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Year]"
@@ -2919,10 +3328,6 @@ JOIN DimReseller dr ON dr.Name = ss.StoreName;</property>
                       dataType="i4"
                       name="NumberDayOfMonth" />
                     <externalMetadataColumn
-                      refId="Package\Fill Staging Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EmployeeKey]"
-                      dataType="i4"
-                      name="EmployeeKey" />
-                    <externalMetadataColumn
                       refId="Package\Fill Staging Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EmployeeName]"
                       codePage="1252"
                       dataType="str"
@@ -2934,10 +3339,6 @@ JOIN DimReseller dr ON dr.Name = ss.StoreName;</property>
                       dataType="str"
                       length="255"
                       name="Role" />
-                    <externalMetadataColumn
-                      refId="Package\Fill Staging Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SalaryKey]"
-                      dataType="i4"
-                      name="SalaryKey" />
                     <externalMetadataColumn
                       refId="Package\Fill Staging Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SalaryGrossHour]"
                       dataType="cy"
@@ -2951,19 +3352,11 @@ JOIN DimReseller dr ON dr.Name = ss.StoreName;</property>
                       dataType="cy"
                       name="SalaryGrossYear" />
                     <externalMetadataColumn
-                      refId="Package\Fill Staging Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ResellerKey]"
-                      dataType="i4"
-                      name="ResellerKey" />
-                    <externalMetadataColumn
                       refId="Package\Fill Staging Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StoreName]"
                       codePage="1252"
                       dataType="str"
                       length="255"
                       name="StoreName" />
-                    <externalMetadataColumn
-                      refId="Package\Fill Staging Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LocationKey]"
-                      dataType="i4"
-                      name="LocationKey" />
                     <externalMetadataColumn
                       refId="Package\Fill Staging Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Area]"
                       codePage="1252"
@@ -2984,16 +3377,28 @@ JOIN DimReseller dr ON dr.Name = ss.StoreName;</property>
                       name="Continent" />
                     <externalMetadataColumn
                       refId="Package\Fill Staging Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Season]"
-                      dataType="i4"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
                       name="Season" />
-                    <externalMetadataColumn
-                      refId="Package\Fill Staging Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Price]"
-                      dataType="i4"
-                      name="Price" />
                     <externalMetadataColumn
                       refId="Package\Fill Staging Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Amount]"
                       dataType="i4"
                       name="Amount" />
+                    <externalMetadataColumn
+                      refId="Package\Fill Staging Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ProductName" />
+                    <externalMetadataColumn
+                      refId="Package\Fill Staging Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UnitPrice]"
+                      dataType="i4"
+                      name="UnitPrice" />
+                    <externalMetadataColumn
+                      refId="Package\Fill Staging Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LineTotal]"
+                      dataType="cy"
+                      name="LineTotal" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -3051,11 +3456,13 @@ JOIN DimReseller dr ON dr.Name = ss.StoreName;</property>
 [sod].[SalesOrderID] SalesOrderId,
 [sod].[OrderQty] Quantity,
 [sod].[UnitPrice] UnitPrice,
+[sod].[LineTotal] LineTotal,
 [soh].[OrderDate] OrderDate,
 [st].[Name] StoreName,
 [p].[FirstName] FirstName,
 [p].[MiddleName] MiddleName,
 [p].[LastName] LastName,
+[pro].[Name] ProductName,
 [eph].[Rate] Rate,
 [te].[Name] Area,
 [te].[CountryRegionCode] Country,
@@ -3068,7 +3475,8 @@ LEFT JOIN Sales.Store st ON cu.StoreID = st.BusinessEntityID
 JOIN HumanResources.Employee e ON soh.SalesPersonID = e.BusinessEntityID
 JOIN Person.Person p ON p.BusinessEntityID = e.BusinessEntityID
 JOIN HumanResources.EmployeePayHistory eph ON e.BusinessEntityID = eph.BusinessEntityID
-JOIN Sales.SalesTerritory te ON te.TerritoryID = soh.TerritoryID;</property>
+JOIN Sales.SalesTerritory te ON te.TerritoryID = soh.TerritoryID
+JOIN Production.Product pro ON pro.ProductID = sod.ProductID;</property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -3229,6 +3637,27 @@ JOIN Sales.SalesTerritory te ON te.TerritoryID = soh.TerritoryID;</property>
                       lineageId="Package\Fill Staging Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[JobTitle]"
                       name="JobTitle"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Fill Staging Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[LineTotal]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Fill Staging Table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LineTotal]"
+                      lineageId="Package\Fill Staging Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[LineTotal]"
+                      name="LineTotal"
+                      precision="38"
+                      scale="6"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Fill Staging Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Fill Staging Table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ProductName]"
+                      length="50"
+                      lineageId="Package\Fill Staging Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductName]"
+                      name="ProductName"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -3292,6 +3721,17 @@ JOIN Sales.SalesTerritory te ON te.TerritoryID = soh.TerritoryID;</property>
                       dataType="wstr"
                       length="50"
                       name="JobTitle" />
+                    <externalMetadataColumn
+                      refId="Package\Fill Staging Table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LineTotal]"
+                      dataType="numeric"
+                      name="LineTotal"
+                      precision="38"
+                      scale="6" />
+                    <externalMetadataColumn
+                      refId="Package\Fill Staging Table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ProductName]"
+                      dataType="wstr"
+                      length="50"
+                      name="ProductName" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -3314,6 +3754,13 @@ JOIN Sales.SalesTerritory te ON te.TerritoryID = soh.TerritoryID;</property>
                       dataType="cy"
                       lineageId="Package\Fill Staging Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[UnitPrice]"
                       name="UnitPrice" />
+                    <outputColumn
+                      refId="Package\Fill Staging Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LineTotal]"
+                      dataType="numeric"
+                      lineageId="Package\Fill Staging Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LineTotal]"
+                      name="LineTotal"
+                      precision="38"
+                      scale="6" />
                     <outputColumn
                       refId="Package\Fill Staging Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[OrderDate]"
                       dataType="dbTimeStamp"
@@ -3343,6 +3790,12 @@ JOIN Sales.SalesTerritory te ON te.TerritoryID = soh.TerritoryID;</property>
                       length="50"
                       lineageId="Package\Fill Staging Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LastName]"
                       name="LastName" />
+                    <outputColumn
+                      refId="Package\Fill Staging Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ProductName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Fill Staging Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ProductName]"
+                      name="ProductName" />
                     <outputColumn
                       refId="Package\Fill Staging Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Rate]"
                       dataType="cy"
@@ -3455,10 +3908,18 @@ JOIN Sales.SalesTerritory te ON te.TerritoryID = soh.TerritoryID;</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
       DTS:CreationName=""
-      DTS:DTSID="{BA0C8828-9F68-4DE2-8500-04A054EC758E}"
+      DTS:DTSID="{878A51AD-F157-4C23-B2A7-D50103ED28C1}"
       DTS:From="Package\Fill Reseller Dimension"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 5"
+      DTS:To="Package\Fill Product Dimension" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
+      DTS:CreationName=""
+      DTS:DTSID="{C04F97E3-61C7-4032-94BD-1352B87A454C}"
+      DTS:From="Package\Fill Product Dimension"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 6"
       DTS:To="Package\Fill Fact Table" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
@@ -3484,7 +3945,7 @@ JOIN Sales.SalesTerritory te ON te.TerritoryID = soh.TerritoryID;</property>
         <NodeLayout
           Size="145,42"
           Id="Package\Fill Fact Table"
-          TopLeft="736,346.666664944755" />
+          TopLeft="262,341.791664968969" />
         <NodeLayout
           Size="187.5,42"
           Id="Package\Fill Location Dimension"
@@ -3611,20 +4072,46 @@ JOIN Sales.SalesTerritory te ON te.TerritoryID = soh.TerritoryID;</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="184,42"
+          Id="Package\Fill Product Dimension"
+          TopLeft="713,337.45833165716" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="808.625,278.70833215759">
+          TopLeft="806.875,278.70833215759">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,67.9583327871646"
+              EndConnector="0,58.7499994995696"
               Start="0,0"
-              End="0,60.4583327871646">
+              End="0,51.2499994995696">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,60.4583327871646" />
+                    End="0,51.2499994995696" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 6]"
+          TopLeft="713,360.624998313065">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-306,0"
+              Start="0,0"
+              End="-298.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-298.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3642,13 +4129,13 @@ JOIN Sales.SalesTerritory te ON te.TerritoryID = soh.TerritoryID;</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="153.5,42"
-          Id="Package\Fill Date Dimension\OLE DB Source"
-          TopLeft="795,167" />
-        <NodeLayout
           Size="173,42"
           Id="Package\Fill Date Dimension\OLE DB Destination"
           TopLeft="784,269" />
+        <NodeLayout
+          Size="153.5,42"
+          Id="Package\Fill Date Dimension\OLE DB Source"
+          TopLeft="795,167" />
         <EdgeLayout
           Id="Package\Fill Date Dimension.Paths[OLE DB Source Output]"
           TopLeft="871.125,209">
@@ -3699,7 +4186,7 @@ JOIN Sales.SalesTerritory te ON te.TerritoryID = soh.TerritoryID;</property>
     design-time-name="Package\Fill Employee Dimension">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="153.5,42"
           Id="Package\Fill Employee Dimension\OLE DB Source"
@@ -3727,7 +4214,9 @@ JOIN Sales.SalesTerritory te ON te.TerritoryID = soh.TerritoryID;</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3822,7 +4311,7 @@ JOIN Sales.SalesTerritory te ON te.TerritoryID = soh.TerritoryID;</property>
     design-time-name="Package\Fill Location Dimension">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="153.5,42"
           Id="Package\Fill Location Dimension\OLE DB Source"
@@ -3862,7 +4351,9 @@ JOIN Sales.SalesTerritory te ON te.TerritoryID = soh.TerritoryID;</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3898,7 +4389,7 @@ JOIN Sales.SalesTerritory te ON te.TerritoryID = soh.TerritoryID;</property>
     design-time-name="Package\Fill Reseller Dimension">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="153.5,42"
           Id="Package\Fill Reseller Dimension\OLE DB Source"
@@ -3926,7 +4417,9 @@ JOIN Sales.SalesTerritory te ON te.TerritoryID = soh.TerritoryID;</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3957,7 +4450,7 @@ JOIN Sales.SalesTerritory te ON te.TerritoryID = soh.TerritoryID;</property>
     design-time-name="Package\Fill Salary Dimension">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="153.5,42"
           Id="Package\Fill Salary Dimension\OLE DB Source"
@@ -3997,7 +4490,9 @@ JOIN Sales.SalesTerritory te ON te.TerritoryID = soh.TerritoryID;</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -4046,28 +4541,6 @@ JOIN Sales.SalesTerritory te ON te.TerritoryID = soh.TerritoryID;</property>
           Id="Package\Fill Staging Table\OLE DB Source"
           TopLeft="677.230769230769,134" />
         <EdgeLayout
-          Id="Package\Fill Staging Table.Paths[OLE DB Source Output]"
-          TopLeft="756.115384615385,176">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,66"
-              Start="0,0"
-              End="0,58.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,58.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\Fill Staging Table.Paths[Derived Column Output1]"
           TopLeft="764.5,382.285714285714">
           <EdgeLayout.Curve>
@@ -4111,6 +4584,28 @@ JOIN Sales.SalesTerritory te ON te.TerritoryID = soh.TerritoryID;</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fill Staging Table.Paths[OLE DB Source Output]"
+          TopLeft="756.115384615385,176">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,66"
+              Start="0,0"
+              End="0,58.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,58.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -4129,6 +4624,70 @@ JOIN Sales.SalesTerritory te ON te.TerritoryID = soh.TerritoryID;</property>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Fill Staging Table\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Fill Product Dimension">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="153.5,42"
+          Id="Package\Fill Product Dimension\OLE DB Source"
+          TopLeft="875,256" />
+        <NodeLayout
+          Size="173,42"
+          Id="Package\Fill Product Dimension\OLE DB Destination"
+          TopLeft="865.384615384615,347.153846153846" />
+        <EdgeLayout
+          Id="Package\Fill Product Dimension.Paths[OLE DB Source Output]"
+          TopLeft="951.817307692308,298">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,49.1538461538461"
+              Start="0,0"
+              End="0,41.6538461538461">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.6538461538461" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fill Product Dimension\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fill Product Dimension\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
